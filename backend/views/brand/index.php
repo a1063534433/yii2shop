@@ -1,6 +1,7 @@
 
 
 <a href="<?php echo \yii\helpers\Url::to(['brand/add'])?>" class="btn btn-primary btn-lg active" role="button">添加用户</a>
+<a href="<?php echo \yii\helpers\Url::to(['brand/recycle'])?>" class="btn btn-primary btn-lg active" role="button">回收站</a>
 
 <table class="table table-striped">
 

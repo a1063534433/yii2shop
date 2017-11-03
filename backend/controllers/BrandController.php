@@ -10,7 +10,7 @@ class BrandController extends Controller
 {
     public function actionIndex()
     {
-        $model=Brand::find()->all();
+        $model=Brand::find()->where(['status'=>1])->all();
         return $this->render('index',['model'=>$model]);
     }
 
@@ -85,7 +85,23 @@ class BrandController extends Controller
         //找到对象
         $model=Brand::findOne($id);
         //删除
-        $model->delete();
+        $model->status=0;
+        $model->save();
+        //跳转
+        $this->redirect(['index']);
+
+    }
+    public function actionRecycle(){
+        $model=Brand::find()->where(['status'=>0])->all();
+        return $this->render('recycle',['model'=>$model]);
+    }
+    public function actionLook($id)
+    {
+        //找到对象
+        $model=Brand::findOne($id);
+        //还原
+        $model->status=1;
+        $model->save();
         //跳转
         $this->redirect(['index']);
 
