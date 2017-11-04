@@ -19,7 +19,7 @@
         <tr>
             <td><?php echo $model->id ?></td>
             <td><?php echo $model->name ?></td>
-            <td><?=\yii\bootstrap\Html::img('@web/'.$model->logo,['height'=>30]) ?></td>
+            <td><?=\yii\bootstrap\Html::img('@web/'.$model->logo,['height'=>50,'class'=>'img-circle']) ?></td>
             <td><?php echo $model->sort ?></td>
             <td><?php echo $model->status ?></td>
             <td><a href="<?php echo \yii\helpers\Url::to(['brand/edit','id'=>$model->id])?>" class="btn btn-warning" role="button">编辑</a>

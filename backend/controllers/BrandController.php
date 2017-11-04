@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use backend\models\Brand;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 
@@ -10,6 +11,15 @@ class BrandController extends Controller
 {
     public function actionIndex()
     {
+     /*   $count=Brand::find()->count();
+        $pageSize=3;
+        $page=new Pagination(
+          [
+              'pageSize'=>$pageSize,
+              'totalCount'=>$count
+          ]
+    );*/
+
         $model=Brand::find()->where(['status'=>1])->all();
         return $this->render('index',['model'=>$model]);
     }
