@@ -1,6 +1,6 @@
 
 
-<a href="<?php echo \yii\helpers\Url::to(['brand/add'])?>" class="btn btn-primary btn-lg active" role="button">添加用户</a>
+<a href="<?php echo \yii\helpers\Url::to(['brand/add'])?>" class="btn btn-primary btn-lg active" role="button">添加商品</a>
 <a href="<?php echo \yii\helpers\Url::to(['brand/recycle'])?>" class="btn btn-primary btn-lg active" role="button">回收站</a>
 
 <table class="table table-striped">
@@ -19,7 +19,7 @@
         <tr>
             <td><?php echo $model->id ?></td>
             <td><?php echo $model->name ?></td>
-            <td><?=\yii\bootstrap\Html::img('@web/'.$model->logo,['height'=>50,'class'=>'img-circle']) ?></td>
+            <td><?=\yii\bootstrap\Html::img($model->logo,['height'=>50,'class'=>'img-circle']) ?></td>
             <td><?php echo $model->sort ?></td>
             <td><?php echo $model->status ?></td>
             <td><a href="<?php echo \yii\helpers\Url::to(['brand/edit','id'=>$model->id])?>" class="btn btn-warning" role="button">编辑</a>

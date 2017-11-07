@@ -5,8 +5,6 @@
 
 <?=$form->field($model,'name')->textInput() ?>
 <?=$form->field($model,'classify_id')->dropDownList(\yii\helpers\ArrayHelper::map($class,'id', 'name'), ['class' => 'dropdownlist']); ?>
-
-
 <?=$form->field($model,'intro')->textInput() ?>
 <?=$form->field($model,'content')->textInput() ?>
 <?=$form->field($model,'status')->radioList(\backend\models\Classify::$statusText) ?>

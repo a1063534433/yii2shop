@@ -18,7 +18,7 @@ class Brand extends \yii\db\ActiveRecord
 {
 
     public  static $statusText=['-1'=>'删除','0'=>'隐藏','1'=>'显示'];
-    public  $imgFile;
+//    public  $imgFile;
     /**
      * @inheritdoc
      */
@@ -36,8 +36,8 @@ class Brand extends \yii\db\ActiveRecord
             [['intro'], 'string'],
             [['sort', 'status'], 'integer'],
             [['name'], 'string', 'max' => 50],
-            [['logo'], 'string', 'max' => 200],
-            [['imgFile'],'file','extensions' => ['gif','png','jpg'],'skipOnEmpty' => true],
+            [['logo'], 'safe'],
+//            [['imgFile'],'file','extensions' => ['gif','png','jpg'],'skipOnEmpty' => true],
         ];
     }
 
