@@ -38,10 +38,15 @@ return [
             'errorAction' => 'site/error',
         ],
 
+            'ueditor' => [
+                'class' => 'crazydb\ueditor\UEditorController',
+
+        ],
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
+            'rules'=>[
             ],
         ],
 
