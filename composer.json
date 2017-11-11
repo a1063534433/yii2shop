@@ -23,7 +23,9 @@
         "flyok666/yii2-qiniu": "^1.0",
         "bailangzhan/yii2-webuploader": "^1.1",
         "crazydb/yii2-ueditor": "^1.6",
-        "kucha/ueditor": "^1.21"
+        "kucha/ueditor": "^1.21",
+        "yiister/yii2-adminlte": "~1.0",
+        "dmstr/yii2-adminlte-asset": "^2.1"
 
 
     },

@@ -2,7 +2,7 @@
 
 
 <?php $form=\yii\bootstrap\ActiveForm::begin()?>
-<?=$form->field($wares,'id')->textInput() ?>
+
 <?=$form->field($wares,'name')->textInput() ?>
 <?php echo $form->field($model,'content')->widget('kucha\ueditor\UEditor',[]);?>
 <?=\yii\bootstrap\Html::img('@web/'.$model->logo_one,['height'=>50]) ?>

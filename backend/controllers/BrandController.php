@@ -53,18 +53,8 @@ class BrandController extends Controller
       if ($request->isPost) {
           //1. 绑定数据
           $model->load($request->post());
-
-
-
-
           if ($model->validate()) {
-              if ($model->imgFile) {
-                  $filePath = "images/" . time() . "." . $model->imgFile->extension;
-                  //文件保存
-                  $model->imgFile->saveAs($filePath, false);
-                  //保存数据
-                  $model->logo = $filePath;
-              };
+
               //5 设置真实图片路径
               //6 保存数据
               if ( $model->save(false)) {

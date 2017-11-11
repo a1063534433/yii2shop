@@ -15,7 +15,7 @@ class WaresController extends Controller
     public function actionIndex()
     {
         $model=Wares::find()->where(['status'=>1])->all();
-        return $this->render('index',['model'=>$model]);
+        return $this->render('index',['model' => $model]);
     }
     //搜索
     public function actionSeek(){
@@ -64,7 +64,10 @@ class WaresController extends Controller
                 }elseif($model->id<'100000'){
                     $model->sn=date('Ymd',$model->inputtime).$model->id;
                 }
-
+                $good=Menu::findOne($model->wares_category_id);
+                $brand=Brand::findOne($model->brand_id);
+                 $model->wares_category_id= $good->name;
+                 $model->brand_id= $brand->name;
                 $model->save();
                 \Yii::$app->session->setFlash('success','添加成功');
                 return $this->redirect(['index']);
@@ -86,6 +89,10 @@ class WaresController extends Controller
             //1. 绑定数据
             if ($model->load($request->post())  && $model->validate()) {
                 //6 保存数据
+                $good=Menu::findOne($model->wares_category_id);
+                $brand=Brand::findOne($model->brand_id);
+                $model->wares_category_id= $good->name;
+                $model->brand_id= $brand->name;
                 $model->save();
                 \Yii::$app->session->setFlash('success','修改成功');
                 return $this->redirect(['index']);
