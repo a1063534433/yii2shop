@@ -19,9 +19,10 @@ class BrandController extends Controller
               'totalCount'=>$count
           ]
     );*/
-
-        $model=Brand::find()->where(['status'=>1])->all();
-        return $this->render('index',['model'=>$model]);
+       $models=new Brand();
+        $model=Brand::find()->where(['status'=>1])->orderBy('sort')->all();
+        $models->status='上线';
+        return $this->render('index',['model'=>$model,'models'=>$models]);
     }
 
     public function actionAdd()

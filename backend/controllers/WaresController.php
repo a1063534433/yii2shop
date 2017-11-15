@@ -11,11 +11,15 @@ use yii\web\Controller;
 
 class WaresController extends Controller
 {
+
     //显示主视图
     public function actionIndex()
     {
-        $model=Wares::find()->where(['status'=>1])->all();
-        return $this->render('index',['model' => $model]);
+        $model=Wares::find()->where(['status'=>1])->orderBy('sort')->all();
+        return $this->render('index',[
+            'model' => $model,
+        ]);
+
     }
     //搜索
     public function actionSeek(){
